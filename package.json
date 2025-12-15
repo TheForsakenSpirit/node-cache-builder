@@ -1,0 +1,35 @@
+{
+  "name": "node-cache-builder",
+  "version": "1.0.0",
+  "description": "CLI tool to aggregate dependencies from multiple repositories and build pnpm cache archives for CI/CD",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "node-cache-builder": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js"
+  },
+  "keywords": ["pnpm", "cache", "ci", "cd", "dependencies"],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "cosmiconfig": "^9.0.0",
+    "ora": "^8.1.1",
+    "semver": "^7.6.3",
+    "tar": "^7.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/semver": "^7.5.8",
+    "typescript": "^5.7.2"
+  }
+}
