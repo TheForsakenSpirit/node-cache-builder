@@ -12,6 +12,28 @@ A CLI tool that aggregates dependencies from multiple Node.js repositories and b
 
 ## Installation
 
+### From Pre-built Executable
+
+Download the latest executable for your platform from the [Releases](../../releases) page:
+
+| Platform | File |
+|----------|------|
+| Linux (x64) | `node-cache-builder-linux` |
+| macOS (x64) | `node-cache-builder-macos-x64` |
+| macOS (ARM) | `node-cache-builder-macos-arm64` |
+| Windows | `node-cache-builder.exe` |
+
+```bash
+# Linux/macOS - make executable and move to PATH
+chmod +x node-cache-builder-linux
+sudo mv node-cache-builder-linux /usr/local/bin/node-cache-builder
+
+# Or run directly
+./node-cache-builder-linux --help
+```
+
+### From Source
+
 ```bash
 # Clone the repository
 git clone <repo-url>
@@ -26,6 +48,26 @@ pnpm build
 # Link globally (optional)
 pnpm link --global
 ```
+
+### Build Executable Locally
+
+Requires [Bun](https://bun.sh) to be installed.
+
+```bash
+# Build for current platform
+pnpm build:exe
+
+# Build for specific platform
+pnpm build:exe:linux      # Linux x64
+pnpm build:exe:macos      # macOS x64
+pnpm build:exe:macos-arm  # macOS ARM64
+pnpm build:exe:windows    # Windows x64
+
+# Build for all platforms
+pnpm build:exe:all
+```
+
+Executables are output to the `./bin/` directory.
 
 ## Quick Start
 

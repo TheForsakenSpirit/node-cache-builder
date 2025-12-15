@@ -10,7 +10,13 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "start": "node dist/cli.js"
+    "start": "node dist/cli.js",
+    "build:exe": "bun build ./src/cli.ts --compile --outfile ./bin/node-cache-builder",
+    "build:exe:linux": "bun build ./src/cli.ts --compile --target=bun-linux-x64 --outfile ./bin/node-cache-builder-linux",
+    "build:exe:macos": "bun build ./src/cli.ts --compile --target=bun-darwin-x64 --outfile ./bin/node-cache-builder-macos",
+    "build:exe:macos-arm": "bun build ./src/cli.ts --compile --target=bun-darwin-arm64 --outfile ./bin/node-cache-builder-macos-arm",
+    "build:exe:windows": "bun build ./src/cli.ts --compile --target=bun-windows-x64 --outfile ./bin/node-cache-builder.exe",
+    "build:exe:all": "pnpm build:exe:linux && pnpm build:exe:macos && pnpm build:exe:macos-arm && pnpm build:exe:windows"
   },
   "keywords": ["pnpm", "cache", "ci", "cd", "dependencies"],
   "author": "",
